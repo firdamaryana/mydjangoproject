@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rango</title>
+    </head>
+
+    <body>
+        <h1>Assalamu'alaykum</h1>
+        <h2>Daftar Buku Firda</h2>
+
+        {% if categories %}
+            <ul>
+                {% for category in categories %}
+                <!-- Following line changed to add an HTML hyperlink -->
+                <li><a href="/library/category/{{ category.slug }}">{{ category.name }}</a></li>
+                {% endfor %}
+            </ul>
+       {% else %}
+            <strong>There are no categories present.</strong>
+       {% endif %}
+
+    </body>
+</html>
